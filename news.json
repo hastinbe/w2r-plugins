@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "date": "2026-10-30",
+      "title": "Shift-queued buildings",
+      "text": "Hold Shift while placing buildings to queue several in a row. Each queued site shows its footprint and a build-queue symbol, and the worker moves on to the next one when it finishes."
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Rally points and production queue",
+      "text": "A rally point set on a building under construction sends its builder there when it is done. With a group selected, a queued unit goes to the building with the least work waiting, so queued units alternate."
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Auto control groups",
+      "text": "Finished buildings and trained units join the control group you choose for each kind. Set the rules in the mod settings."
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Game Mode: classic balance",
+      "text": "The lobby has a Game Mode selector, with classic balance as an option. Replays and live watching follow the mode the game was played in."
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Automatic updates",
+      "text": "The game now installs core and plugin updates at launch. Turn it off in the mod settings if you would rather update by hand."
+    }
+  ]
+}
