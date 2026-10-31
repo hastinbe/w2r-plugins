@@ -30,7 +30,7 @@ installs it, and tells you when an update is available.
 | **Player Color Bar** | One box per player in the top bar, with team dividers | game access, hooks | no |
 | **Random Map** | A Random map button on the Create screen, with a player-count filter and folder | nothing | no |
 | **Remember Game Settings** | Fills in the settings of your last created game | game access, hooks | no |
-| **Black Recolor** | Shows the black player as pink or cyan, on your screen only | game access, hooks | no |
+| **Unit Color** | Recolors the eight team colors on your screen only, with profiles; Allied Minimap Colors (replaces Black Recolor) | game access, hooks | no |
 | **Countdown Sound** | A beep for each second of the lobby countdown, audible in the background | game access, hooks | no |
 | **Observer** | Pick OBS as your team to watch a game instead of playing | game access, hooks | **yes** |
 
@@ -91,5 +91,5 @@ cargo build --release --target i686-pc-windows-msvc -p w2r-random-map
 
 ## Credits
 
-Chat and Black Recolor are ports of features from **wc2r-plus** by Luxray997 (MIT); they keep the
+Chat and Unit Color (which grew out of Black Recolor) are ports of features from **wc2r-plus** by Luxray997 (MIT); they keep the
 original credit and license notice.

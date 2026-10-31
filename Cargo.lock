@@ -623,13 +623,6 @@ version = "1.0.0"
 source = "git+https://github.com/hastinbe/w2r-mod-loader?rev=42df988d77f2432a82c0986360743679e9921d76#42df988d77f2432a82c0986360743679e9921d76"
 
 [[package]]
-name = "w2r-black-recolor"
-version = "0.1.0"
-dependencies = [
- "w2r-abi",
-]
-
-[[package]]
 name = "w2r-chat"
 version = "1.2.0"
 dependencies = [
