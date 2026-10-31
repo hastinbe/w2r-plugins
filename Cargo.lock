@@ -739,6 +739,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "w2r-unit-color"
+version = "0.2.0"
+dependencies = [
+ "w2r-abi",
+ "w2r-formats",
+]
+
+[[package]]
 name = "wasi"
 version = "0.11.1+wasi-snapshot-preview1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

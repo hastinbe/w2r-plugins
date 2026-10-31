@@ -1,0 +1,134 @@
+{
+  "profiles": [
+    {
+      "name": "Classic",
+      "colors": {
+        "players": [
+          {
+            "player": 1,
+            "color": "#A40000"
+          },
+          {
+            "player": 2,
+            "color": "#003CC0"
+          },
+          {
+            "player": 3,
+            "color": "#2CB494"
+          },
+          {
+            "player": 4,
+            "color": "#9848B0"
+          },
+          {
+            "player": 5,
+            "color": "#F08414"
+          },
+          {
+            "player": 6,
+            "color": "#28283C"
+          },
+          {
+            "player": 7,
+            "color": "#E0E0E0"
+          },
+          {
+            "player": 8,
+            "color": "#FCFC48"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Remastered",
+      "colors": {
+        "players": [
+          {
+            "player": 1,
+            "color": "#A60000"
+          },
+          {
+            "player": 2,
+            "color": "#0096FF"
+          },
+          {
+            "player": 3,
+            "color": "#2DB696"
+          },
+          {
+            "player": 4,
+            "color": "#9A49B2"
+          },
+          {
+            "player": 5,
+            "color": "#FB8E14"
+          },
+          {
+            "player": 6,
+            "color": "#28283D"
+          },
+          {
+            "player": 7,
+            "color": "#E3E3E3"
+          },
+          {
+            "player": 8,
+            "color": "#FFFF49"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Black to pink",
+      "colors": {
+        "players": [
+          {
+            "player": 6,
+            "color": "#FF00FF"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Black to cyan",
+      "colors": {
+        "players": [
+          {
+            "player": 6,
+            "color": "#00C6E0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Maxx444's + Pink",
+      "colors": {
+        "players": [
+          {
+            "player": 4,
+            "color": "#6A0DAD"
+          },
+          {
+            "player": 6,
+            "color": "#FF00FF"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Maxx444's + Cyan",
+      "colors": {
+        "players": [
+          {
+            "player": 4,
+            "color": "#6A0DAD"
+          },
+          {
+            "player": 6,
+            "color": "#00C6E0"
+          }
+        ]
+      }
+    }
+  ]
+}

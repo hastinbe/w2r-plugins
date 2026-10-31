@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "id": "w2r-unit-color",
+  "name": "Unit Color",
+  "version": "0.2.0",
+  "author": "Luxray997, Beau Hastings, Maxx444",
+  "description": "Recolors the eight team colors on your screen only (units, color boxes, most minimap dots), with color pickers and profiles in color_profiles.json. Allied Minimap Colors (F1): allies blue, enemies red on the minimap. Replaces Black Recolor.",
+  "entry": "w2r_unit_color.dll",
+  "abi": 1,
+  "game_builds": ["1.0.2.2818"],
+  "capabilities": ["game.read", "hooks.raw"],
+  "affects_simulation": false,
+  "dependencies": [],
+  "replaces": [{ "id": "w2r-black-recolor", "version_req": "<1.0.0" }]
+}
