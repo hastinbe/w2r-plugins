@@ -44,7 +44,8 @@ Chooses how the map looks while a match is paused, shows a box saying who paused
     at zero.
   - **Other players with the plugin** see and hear the countdown too (this needs a host that lets
     plugins message peers during a match). If two of you press Resume at about the same time, the
-    lower player number's countdown is kept on every machine, so one resume is sent.
+    lower player number's countdown is kept on every machine, so one resume is sent. **Needs
+    testing:** the Resume delay has not yet been tested in a multiplayer match.
   - **Players without the plugin or the mod loader** are not affected: the resume is the game's own
     command, so every player resumes at the same turn as always, and nothing is sent to them. A
     resume sent twice (if two players' plugins both send one) does nothing the second time on
@@ -85,6 +86,8 @@ Chooses how the map looks while a match is paused, shows a box saying who paused
 
 - Tested in game on a custom scenario match: the three Pause Screen choices, the Pause Box in
   every position in the HD and the classic view, and the countdown's tick, beeps and message line.
+- **Needs testing: the Resume delay (Resume Countdown) in a multiplayer match.** It has only run
+  offline so far.
 - **Not yet tested:** an online match against other players (the countdown shared between
   machines, the tie-break, players without the plugin or the mod loader), observers and replays.
 - On a loader without `feat/pause-pro-host` the symbols above are missing: the plugin logs which
