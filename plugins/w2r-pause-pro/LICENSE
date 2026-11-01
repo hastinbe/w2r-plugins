@@ -1,0 +1,13 @@
+The resume countdown's background beeps in the w2r-pause-pro plugin (src/tone.rs, and the
+focus check in src/countdown.rs) are copied from the w2r-countdown-sound plugin by Beau Hastings:
+
+    https://github.com/hastinbe/w2r-plugins/tree/main/plugins/w2r-countdown-sound
+    (Countdown Sound 0.1.1, w2r-plugins commit 7f713df; first added in 4f098d0)
+
+Copyright (c) 2026 Beau Hastings
+
+When this code was copied, the w2r-plugins repository carried no license, so no license to this
+code has been granted. It is used here with credit and offered to Beau Hastings for w2r-plugins;
+publishing this plugin needs his permission (or a license on w2r-plugins).
+
+The rest of w2r-pause-pro is by Maxx444.

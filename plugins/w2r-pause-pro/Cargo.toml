@@ -1,0 +1,18 @@
+[package]
+name = "w2r-pause-pro"
+version = "0.7.2-mx"
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+description = "How the map looks while a match is paused (grey-out, colour or tinted), and a box saying who paused"
+
+[lib]
+name = "w2r_pause_pro"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+w2r-abi.workspace = true
+
+[lints.clippy]
+# Detours are called by the game; the ABI header documents the contract.
+missing_safety_doc = "allow"

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "id": "w2r-pause-pro",
+  "name": "Pause Pro",
+  "version": "0.7.2-mx",
+  "author": "Maxx444, Beau Hastings",
+  "description": "Choose how the map looks while paused: grey, in color, or tinted with the pauser's color. A box in your race's dialog art shows who paused and their pauses left. A Resume counts down 5 seconds with a tick before the game resumes.",
+  "entry": "w2r_pause_pro.dll",
+  "abi": 1,
+  "game_builds": ["1.0.2.2818"],
+  "capabilities": ["game.read", "hooks.raw", "net.send"],
+  "affects_simulation": false,
+  "dependencies": []
+}

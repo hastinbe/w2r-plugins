@@ -678,6 +678,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "w2r-pause-pro"
+version = "0.7.2-mx"
+dependencies = [
+ "w2r-abi",
+]
+
+[[package]]
 name = "w2r-player-colors"
 version = "0.2.0"
 dependencies = [
