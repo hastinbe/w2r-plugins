@@ -519,7 +519,17 @@ pub fn player_name(slot: &[u8]) -> Option<String> {
 }
 
 /// "X paused the game." (with the remaining pauses in a networked match) or "X resumed the game."
-pub fn pause_line(name: &str, paused: bool, remaining: Option<u8>) -> String {
+/// Without a name (offline, where the game leaves the last online match's names in PlayerNames)
+/// it is "Game paused." or "Game resumed."
+pub fn pause_line(name: Option<&str>, paused: bool, remaining: Option<u8>) -> String {
+    let Some(name) = name else {
+        return if paused {
+            "Game paused."
+        } else {
+            "Game resumed."
+        }
+        .to_string();
+    };
     if !paused {
         return format!("{name} resumed the game.");
     }
@@ -853,19 +863,29 @@ mod tests {
     #[test]
     fn pause_lines_pluralise_and_skip_the_count_offline() {
         assert_eq!(
-            pause_line("Ann", true, Some(2)),
+            pause_line(Some("Ann"), true, Some(2)),
             "Ann paused the game. (2 pauses remaining)"
         );
         assert_eq!(
-            pause_line("Ann", true, Some(1)),
+            pause_line(Some("Ann"), true, Some(1)),
             "Ann paused the game. (1 pause remaining)"
         );
         assert_eq!(
-            pause_line("Ann", true, Some(0)),
+            pause_line(Some("Ann"), true, Some(0)),
             "Ann paused the game. (0 pauses remaining)"
         );
-        assert_eq!(pause_line("Ann", true, None), "Ann paused the game.");
-        assert_eq!(pause_line("Ann", false, Some(2)), "Ann resumed the game.");
+        assert_eq!(pause_line(Some("Ann"), true, None), "Ann paused the game.");
+        assert_eq!(
+            pause_line(Some("Ann"), false, Some(2)),
+            "Ann resumed the game."
+        );
+    }
+
+    #[test]
+    fn offline_pause_lines_name_no_player() {
+        assert_eq!(pause_line(None, true, None), "Game paused.");
+        assert_eq!(pause_line(None, false, None), "Game resumed.");
+        assert_eq!(pause_line(None, true, Some(2)), "Game paused.");
     }
 
     #[test]
