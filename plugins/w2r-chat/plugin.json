@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "w2r-chat",
   "name": "Chat",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Luxray997 (ported by Beau Hastings)",
   "description": "In-match chat history with channels and player colours (port of wc2r-plus chat.cpp by Luxray997).",
   "entry": "w2r_chat.dll",

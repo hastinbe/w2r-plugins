@@ -1030,6 +1030,17 @@ unsafe extern "C" fn write_sticky_message(text: *const c_char, duration_ms: u32)
 }
 
 fn announce_pause(g: &Game, paused: bool) {
+    // Offline the game does not refill PlayerNames, so the issuer's slot may still hold a name
+    // from the last online match; the game's own handler shows no name there either.
+    if unsafe { *g.networked_match } == 0 {
+        capture(
+            model::pause_line(None, paused, None).as_bytes(),
+            true,
+            Channel::System,
+            Vec::new(),
+        );
+        return;
+    }
     let who = unsafe { *g.command_issuer };
     if who >= PLAYER_COUNT {
         return;
@@ -1040,8 +1051,7 @@ fn announce_pause(g: &Game, paused: bool) {
     let Some(name) = model::player_name(slot) else {
         return;
     };
-    let remaining = (unsafe { *g.networked_match } != 0)
-        .then(|| unsafe { *g.pauses_remaining.add(who as usize) });
+    let remaining = Some(unsafe { *g.pauses_remaining.add(who as usize) });
     let colour = colour_index(g, who as usize);
     let names = if (colour as usize) < model::PLAYER_COUNT {
         vec![NameSpan {
@@ -1053,7 +1063,7 @@ fn announce_pause(g: &Game, paused: bool) {
         Vec::new()
     };
     capture(
-        model::pause_line(&name, paused, remaining).as_bytes(),
+        model::pause_line(Some(&name), paused, remaining).as_bytes(),
         true,
         Channel::System,
         names,
