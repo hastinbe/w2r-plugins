@@ -57,8 +57,8 @@ loader change `feat/health-bars-last`; without it the rows still appear, in the 
 
 - The countdown assumes 50 game ticks a second (the speed it was measured at); at other game
   speeds the seconds run faster or slower.
-- The packed icons, the bars and the numbers were checked in the game in a test build (HD
-  graphics, single player and online against a friend, health bars above and below). Not yet
-  tested: Classic graphics, observers, replays, other screen sizes.
+- The packed icons, the bars, the numbers and both settings screens were checked in the game in a
+  test build (HD and Classic graphics, single player and online against a friend, health bars above
+  and below). Not yet tested: observers, replays, other screen sizes.
 - Hooks the same game functions as any other plugin that moves the spell icons or redraws the
   health bars; only one such plugin should be enabled.
