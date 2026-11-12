@@ -1,0 +1,18 @@
+[package]
+name = "w2r-buff-icons"
+version = "0.1.2-dev"
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+description = "Spell icons over units packed and wrapped by unit size, a countdown on them in their last 10 seconds, and see-through health bars"
+
+[lib]
+name = "w2r_buff_icons"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+w2r-abi.workspace = true
+
+[lints.clippy]
+# Detours are called by the game; the ABI header documents the contract.
+missing_safety_doc = "allow"
