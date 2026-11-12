@@ -62,3 +62,7 @@ loader change `feat/health-bars-last`; without it the rows still appear, in the 
   and below). Not yet tested: observers, replays, other screen sizes.
 - Hooks the same game functions as any other plugin that moves the spell icons or redraws the
   health bars; only one such plugin should be enabled.
+
+## License
+
+MIT, see `LICENSE` (Copyright (c) 2026 Maxx444).
