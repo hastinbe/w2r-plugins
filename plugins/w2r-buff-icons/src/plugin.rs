@@ -441,15 +441,14 @@ fn debug(msg: &str) {
 
 /// Turns Debug Log on or off, saves it, and opens or closes debug.log.
 fn set_debug(on: bool) {
-    if let Some(h) = host() {
-        unsafe { (h.settings_set_i64)(h.token, s(KEY_DEBUG), on as i64) };
-    }
+    // Applied for this session even if saving fails (then the next launch keeps the old value).
+    let saved = save(KEY_DEBUG, on as i64);
     if on == DEBUG.swap(on, Ordering::Relaxed) {
         return;
     }
     if on {
         open_debug_log();
-        debug(&format!("Debug Log turned on (Buff Icons {})", env!("CARGO_PKG_VERSION")));
+        debug(&format!("Debug Log turned on (Buff Icons {}); saved: {saved}", env!("CARGO_PKG_VERSION")));
     } else {
         debug("Debug Log turned off");
         close_debug_log();
@@ -577,12 +576,19 @@ unsafe extern "C" fn on_event(event: *const W2rEvent) {
 /// A setting as a checkbox on the plugin card; a change is saved and applied at once.
 fn card_checkbox(ui: &W2rUi, key: &str, label: &str) {
     let mut on = (setting(key, 1) != 0) as i32;
-    if unsafe { (ui.checkbox)(ui.ctx, s(label), &mut on) } != 0 {
-        if let Some(h) = host() {
-            unsafe { (h.settings_set_i64)(h.token, s(key), (on != 0) as i64) };
-        }
+    if unsafe { (ui.checkbox)(ui.ctx, s(label), &mut on) } != 0 && save(key, (on != 0) as i64) {
         read_settings();
     }
+}
+
+/// Saves one of the plugin's settings; false (and a debug.log line) when the host refuses it.
+fn save(key: &str, value: i64) -> bool {
+    let Some(h) = host() else { return false };
+    let status = unsafe { (h.settings_set_i64)(h.token, s(key), value) };
+    if status != W2R_OK {
+        debug(&format!("saving {key} = {value} failed: {status}"));
+    }
+    status == W2R_OK
 }
 
 unsafe extern "C" fn on_ui(ui: *const W2rUi) {

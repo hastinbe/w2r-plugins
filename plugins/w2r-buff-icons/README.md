@@ -1,6 +1,6 @@
 # Buff Icons
 
-**Test build (0.1.1-dev).** Tidier spell icons and health bars over units.
+**Test build (0.1.2-dev).** Tidier spell icons and health bars over units.
 
 - **Packed icons.** The game puts each spell icon at a fixed spot 16 px apart (Bloodlust, Haste or
   Slow, Invisibility, Unholy Armor), so a lone Unholy Armor sits 48 px out from the unit. Here the
@@ -30,16 +30,18 @@ writes the plugin's own `debug.log` in its data folder; the two runs before are 
 
 ## Needs
 
-A W2R Mod Loader with:
+Warcraft II: Remastered 1.0.2.2818 and **W2R Mod Loader 1.2.1 or later** (pending: the loader
+changes `feat/unit-bar-symbols` and `feat/map-draw`). That is the first core with:
 
 - the symbols `UnitBuffIcons`, `DrawBuffIcon`, `DrawUnitHealthBar`, `UnitSelectBox`,
   `UnitDrawCentre` and `UnitMaxHp` (with the existing `UnitTypeFlags`, `GameSettingsFlags`,
   `ViewPlayer`, `VisionMasks` and `RenderPalette`);
-- map drawing for plugins (the `w2r_map_draw` export), for the countdown and the see-through
-  bars. Without it the icons are still packed, the game keeps drawing its own health bars and
-  there is no countdown.
+- map drawing for plugins (the `w2r_map_draw` export), for the countdown and the see-through bars.
 
-Without the symbols the plugin does nothing and the card shows an error.
+On an older loader the plugin does nothing and its card shows an error. With the symbols but
+without map drawing, the icons are still packed, the game keeps drawing its own health bars and
+there is no countdown. The Health Bars heading comes last on the Gameplay page only with the
+loader change `feat/health-bars-last`; without it the rows still appear, in the stock order.
 
 ## Capabilities
 

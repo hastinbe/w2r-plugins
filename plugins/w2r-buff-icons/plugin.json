@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "w2r-buff-icons",
   "name": "Buff Icons",
-  "version": "0.1.1-dev",
+  "version": "0.1.2-dev",
   "author": "Maxx444",
   "description": "Spell icons over units sit side by side with no gaps and wrap to a new row by unit size, can follow the health bars below the unit, and show the seconds left in their last 10 seconds. Optional see-through health bars.",
   "entry": "w2r_buff_icons.dll",
