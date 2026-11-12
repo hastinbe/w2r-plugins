@@ -1,6 +1,6 @@
 # Buff Icons
 
-**Test build (0.1.0-dev).** Tidier spell icons and health bars over units.
+**Test build (0.1.1-dev).** Tidier spell icons and health bars over units.
 
 - **Packed icons.** The game puts each spell icon at a fixed spot 16 px apart (Bloodlust, Haste or
   Slow, Invisibility, Unholy Armor), so a lone Unholy Armor sits 48 px out from the unit. Here the
@@ -19,7 +19,7 @@
   caster's mana under it).
 
 The settings are on **Options > Gameplay**: See-Through Health Bars under the Health Bars heading,
-and the two icon settings right after it under **Spell Icons**. The same settings are on the
+and the two icon settings right after it under **Buff Icons**. The same settings are on the
 plugin's card in the plugin manager (Manage, on the title screen), in the same order.
 
 ## Logging

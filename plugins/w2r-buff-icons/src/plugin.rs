@@ -31,7 +31,7 @@ use crate::model;
 /// heading, the icon settings under a heading of their own after it.
 const CATEGORY: &str = "Gameplay";
 const SUBCATEGORY_HEALTH: &str = "Health Bars";
-const SUBCATEGORY_ICONS: &str = "Spell Icons";
+const SUBCATEGORY_ICONS: &str = "Buff Icons";
 
 const KEY_SEE_THROUGH: &str = "see_through_health_bars";
 const KEY_FOLLOW: &str = "icons_follow_health_bars";
@@ -591,7 +591,7 @@ unsafe extern "C" fn on_ui(ui: *const W2rUi) {
     };
     unsafe {
         (ui.label)(ui.ctx, s("Spell icons over units, packed side by side and wrapped by unit size."));
-        (ui.label)(ui.ctx, s("Also under Options > Gameplay (Health Bars and Spell Icons)."));
+        (ui.label)(ui.ctx, s("Also under Options > Gameplay (Health Bars and Buff Icons)."));
         // The same settings as the options screen, in the same order and under the same keys.
         (ui.label)(ui.ctx, s(SUBCATEGORY_HEALTH));
         card_checkbox(ui, KEY_SEE_THROUGH, LABEL_SEE_THROUGH);

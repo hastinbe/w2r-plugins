@@ -1,6 +1,6 @@
 [package]
 name = "w2r-buff-icons"
-version = "0.1.0-dev"
+version = "0.1.1-dev"
 edition.workspace = true
 rust-version.workspace = true
 publish = false
