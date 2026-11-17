@@ -1,8 +1,0 @@
-# Keep LF so shell scripts and vectors are byte-identical on Windows checkouts.
-* text=auto eol=lf
-*.sh text eol=lf
-*.py text eol=lf
-*.bat text eol=crlf
-*.png binary
-*.dll binary
-*.exe binary
